@@ -61,7 +61,7 @@ class App extends React.Component {
             searchKey: null,
             torrentData: null
         };
-        this.endpoint = "https://torrent-finderz.herokuapp.com/";
+        this.endpoint = "http://localhost:8000";
     }
 
     render() {
