@@ -1,0 +1,20 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "Torrent search API",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Aditya Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "torrent-search-api": "^2.1.4"
+  },
+  "engines": {
+    "node": "14.17.6"
+  }
+}

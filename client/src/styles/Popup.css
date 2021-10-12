@@ -1,0 +1,56 @@
+.popup-panel {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    background-color: #686868a2;
+
+    /* For placing the whole panel above every element */
+    z-index: 1;
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    background-color: #ecf0f3;
+    background-color: #ffffff;
+
+
+    border: 3px solid black;
+    border-radius: 8px;
+
+    max-width: 400px;
+    min-width: 200px;
+    
+    padding: 30px;
+}
+
+.popup a{
+	display: block;
+
+    width: 100px;
+	color: white;
+	background-color: #202020;
+	border: none;
+	border-radius: 48px;
+	padding: 5px 35px;
+}
+.popup a:hover {
+	color: black;
+	background-color: rgb(195, 195, 195);}
+.popup a:active {background-color: rgb(255, 255, 255);}
+
+.popup a i {
+	font-size: 16px;
+}

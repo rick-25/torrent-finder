@@ -1,0 +1,78 @@
+#form {
+	max-width: 700px;
+	
+	border: 1px solid #ffffff;
+	border-radius: 16px;
+	
+	overflow: auto;
+	transition: all .5s;
+
+	margin: 25vh auto;
+	padding: 20px;
+}
+#form:focus-within, #form:hover {
+	box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+}
+
+#form > *{
+	margin: 20px auto;
+}
+
+#form h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 4rem;
+    margin-top: 2vw;
+
+	color: rgb(63, 68, 75);
+
+	animation-name: rgb;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+@keyframes rgb {
+	0% {
+		text-shadow: 1px 1px 0px red,
+		2px 2px 0px green,
+		3px 3px 0px blue;
+	}
+	33% {
+		text-shadow: 1px 1px 0px blue,
+		2px 2px 0px red,
+		3px 3px 0px green;
+	}
+	64% {
+		text-shadow: 1px 1px 0px green,
+		2px 2px 0px blue,
+		3px 3px 0px red;
+	}
+	100% {
+		text-shadow: 1px 1px 0px red,
+		2px 2px 0px green,
+		3px 3px 0px blue;
+	}
+}
+#form button{
+	display: block;
+
+	color: white;
+	background-color: #202020;
+	border: none;
+	border-radius: 48px;
+	padding: 5px 35px;
+    margin-bottom: 2.5vw;
+}
+#form button:hover {
+	color: black;
+	background-color: rgb(195, 195, 195);}
+#form button:active {background-color: rgb(255, 255, 255);}
+
+#form button i {
+	font-size: 16px;
+}
+
+
+@media screen and (max-width: 500px) {
+	#form h1 {
+		font-size: 3rem;
+	}	
+}
