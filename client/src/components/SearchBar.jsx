@@ -1,10 +1,11 @@
 import '../styles/SearchBar.css'
+import icon from '../assets/search-solid.svg'
 
 function SearchBar(props) {
 	return (
 		<div id="search-bar">
 				<img 
-					src="./search-solid.svg"
+					src={icon}
 					alt="Search"
 				/>
 				<input 
