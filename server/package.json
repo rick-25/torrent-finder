@@ -1,20 +1,25 @@
 {
   "name": "node-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Torrent search API",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "cd ../client && npm run build && cp -r ./dist ../server/build",
+    "dev": "nodemon ."
   },
   "keywords": [],
   "author": "Aditya Kumar",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "torrent-search-api": "^2.1.4"
   },
   "engines": {
     "node": "14.17.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
