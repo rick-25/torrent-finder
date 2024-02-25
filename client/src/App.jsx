@@ -61,7 +61,7 @@ class App extends React.Component {
             searchKey: null,
             torrentData: null
         };
-        this.endpoint = import.meta.env.VITE_SERVER_URL || "http://localhost:8000/";
+        this.endpoint = import.meta.env.VITE_SERVER_URL || "/";
     }
 
     render() {
