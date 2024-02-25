@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "cd ../client && npm run build && cp -r ./dist ../server/build",
+    "build": "cd ../client && npm i && npm run build && cp -r ./dist ../server/build && cd ../server/ && npm i",
     "dev": "nodemon ."
   },
   "keywords": [],
