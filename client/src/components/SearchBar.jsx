@@ -12,6 +12,7 @@ function SearchBar(props) {
 				type="text"
 				placeholder="Enter torrent name e.g Gta V"
 				name="searchkey"
+				value={props.searchText ?? ""}
 				onChange={(e) => props.syncInputValue(e.target.value)}
 			/>
 		</div>

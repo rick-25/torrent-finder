@@ -6,7 +6,7 @@ function Form(props) {
   return (
     <div id="form">
       <h1>{"TorrentFinder"}</h1>
-      <SearchBar syncInputValue={(data) => props.syncInputValue(data)} />
+      <SearchBar syncInputValue={(data) => props.syncInputValue(data)} searchText={props.searchText} />
       <button onClick={() => props.executeSearch()}>
         <i className="fa fa-send-o"></i>
       </button>

@@ -8,6 +8,9 @@ import Loader from './components/Loader';
 import Popup from './components/Popup';
 
 
+const SEARCH_PARAM = "s";
+
+
 
 //Statefull class component
 class App extends React.Component {
@@ -18,20 +21,16 @@ class App extends React.Component {
   }
 
   executeSearch() {
-    this.setState(
-      {
-        searchKey: this.state.inputValue,
-        torrentData: null
-      },
-      () => this.apiCall()
-    )
+    const urlParams = new URLSearchParams(window.location.search);
+
+    urlParams.set(SEARCH_PARAM, this.state.inputValue);
+    window.location.search = urlParams;
   }
 
 
   //AJAX  api call for torrent data
   apiCall() {
     const key = this.state.searchKey;
-    console.log(this.getSearchUrl(this.endpoint, key));
     fetch(this.getSearchUrl(this.endpoint, key))
       .then(res => res.json())
       .then(data => this.setState({ torrentData: data }))
@@ -64,6 +63,30 @@ class App extends React.Component {
     this.endpoint = import.meta.env.VITE_SERVER_URL || "/";
   }
 
+  componentDidMount() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchKey = urlParams.get(SEARCH_PARAM);
+
+    if (searchKey) {
+      this.setState({
+        ...this.state,
+        searchKey,
+        torrentData: null,
+        inputValue: searchKey,
+      })
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.searchKey && this.state.searchKey != prevState.searchKey) {
+      this.setState({
+        ...this.state,
+        torrentData: null,
+      })
+      this.apiCall();
+    }
+  }
+
   render() {
     const blurStyle = {
       filter: 'blur(5px)'
@@ -85,7 +108,9 @@ class App extends React.Component {
         }
         <div style={showPopup ? blurStyle : null} >
           <Form
-            syncInputValue={(key) => this.syncInputValue(key)} executeSearch={() => this.executeSearch()}
+            searchText={this.state.inputValue}
+            executeSearch={() => this.executeSearch()}
+            syncInputValue={(key) => this.syncInputValue(key)}
           />
           {
             (this.state.torrentData) ?
