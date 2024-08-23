@@ -26,11 +26,16 @@ table {
 }
 
 td {
+	min-width: 0;
 	padding: 10px;
 }
-td:nth-child(2) {
-	word-wrap: break-word;
-	width: 20%;
+
+td p {
+	overflow-wrap: anywhere;
+}
+
+td:nth-child(2) p {
+	white-space: nowrap;
 }
 
 tr:hover {

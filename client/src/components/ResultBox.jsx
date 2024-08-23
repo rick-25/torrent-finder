@@ -27,7 +27,7 @@ function ResultBox(props) {
 
   return (
     <div id="result-box" ref={resultRef}>
-      <div className="header" onClick={() => console.log('Header clicked!')}>
+      <div className="header">
         <p>#{props.searchKey}</p>
       </div>
       <div className="results">
