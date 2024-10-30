@@ -24,7 +24,12 @@ class App extends React.Component {
     const urlParams = new URLSearchParams(window.location.search);
 
     urlParams.set(SEARCH_PARAM, this.state.inputValue);
-    window.location.search = urlParams;
+    this.setState({
+      ...this.state,
+      searchKey: this.state.inputValue,
+    })
+
+    history.pushState({}, null, `/?${urlParams.toString()}`);
   }
 
 
